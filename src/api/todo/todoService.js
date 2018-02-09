@@ -2,7 +2,7 @@ const Todo = require('./todo')
 
  Todo.methods(['get','post','put','delete']) // habilito os métodos que minha api vai usar
  Todo.updateOptions({new: true, runValidators: true}) 
- // [new: true] ao atualizar um registro no mongo por padrão o nodeRestful 
+ // [new: true] ao atualizar um registro no mongo por o padrão nodeRestful 
  // te devolve o objeto antigo e não o que acabara de ser atualizado, com o true ele vai retornar o atualizado
 
  //[runValidators: true]
