@@ -7,6 +7,8 @@ const server = express() //startar o express, criar uma instancia e associar a v
 //Então esse server aqui vai ser importante ser passado para o meu arquivo de rotas para que eu possa
 //a partir daquele servidor mapear as rotas dentro dele
 
+const allowCors = require('./cors')
+
 //aplicar alguns middlewares para a nossa requisição, instância do express
 server.use(bodyParser.urlencoded({ extended: true})) 
 server.use(bodyParser.json())
@@ -15,6 +17,7 @@ server.use(bodyParser.json())
 //O express é fortemente baseado no padrão Chenge Of Responsability, 
 //   como se vc tivesse uma cadeia de middlewares que vão estar trabalhando com as requisições. 
 //   Todas as requisições vão passr pelo middleware bodyParser
+server.use(allowCors)
 
 //registrar a porta e se tudo der certo vai mostrar mensagem no console
 server.listen(port, function() {
